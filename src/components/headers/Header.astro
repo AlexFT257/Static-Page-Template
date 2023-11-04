@@ -1,0 +1,39 @@
+---
+import HeaderButton from "../headers/HeaderButton.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  nav?: {
+    title: string;
+    href: string;
+  }[];
+}
+
+const { title, description, nav } = Astro.props;
+---
+
+<header
+  class="flex flex-row align-middle justify-between items-center py-8 mx-auto max-w-screen lg:py16 lg:px-6"
+>
+  <div class="mx-auto text-center mb-4 lg:mb-6">
+    <div class="mx-auto text-center mb-4 lg:mb-6">
+      <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-white">
+        {title}
+      </h2>
+      <p class="font-semibold text-gray-500 sm:text-xl dark:text-gray-400">
+        {description}
+      </p>
+    </div>
+
+    <nav
+      class="flex flex-col items-center justify-between w-full text-center md:flex-row"
+    >
+      {
+        nav?.map((item) => {
+          return <HeaderButton href={item.href}> {item.title}</HeaderButton>;
+        })
+      }
+    </nav>
+  </div>
+</header>

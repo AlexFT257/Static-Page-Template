@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About Page">
+  <main class="max-w-4xl flex flex-col items-center h-full px-4 m-auto">
+    <div class="bg-white rounded-lg py-24 sm:py-32">
+      <div class="mx-auto grid gap-x-16 justify-between gap-y- px-6 lg:px-12 xl:grid-cols-2">
+        <div class="max-w-2xl">
+          <h2
+            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            Meet the developer
+          </h2>
+          <p class="mt-6 text-lg leading-8 text-gray-600">
+            If you want to know more about me, you can visit my
+            <a
+              class="text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150"
+              href="https://github.com/AlexFT257"
+              target="_blank">Github</a
+            >
+          </p>
+        </div>
+        <div class="flex items-center gap-x-6">
+          <img
+            class="h-16 w-16 rounded-full"
+            src="https://avatars.githubusercontent.com/u/22183859?v=4"
+            alt=""
+          />
+          <div>
+            <h3
+              class="text-base font-semibold leading-7 tracking-tight text-gray-900"
+            >
+              Alex Tardón B.
+            </h3>
+            <p class="text-sm font-semibold leading-6 text-indigo-600">
+              Software Engineer
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
