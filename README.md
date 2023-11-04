@@ -1,54 +1,21 @@
-# Astro Starter Kit: Basics
+# Static Website Template
 
-```sh
-npm create astro@latest -- --template basics
-```
+This is a static website template built using [Astro](https://astro.build/), [Tailwind CSS](https://tailwindcss.com/), and a bit of JavaScript to handle mobile device dropdowns. It is designed to be a starting point for static websites that are fast, accessible, and SEO friendly. It is also designed to be easily customizable to fit your project's needs.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+![Website Preview](public/preview.png)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Features
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **High Performance:** Achieves a Lighthouse score of 99 in performance.
+- **Accessibility:** Built with accessibility in mind, scoring 91 in Lighthouse.
+- **Best Practices:** Follows best practices according to Lighthouse with a score of 100.
+- **SEO Friendly:** Optimized for search engines with a perfect Lighthouse SEO score.
+- **Mobile-Friendly:** Includes responsive design and mobile device dropdown functionality.
+- **Customizable:** Easily customize the template to your project's needs.
+- **Tailwind CSS:** Uses the popular Tailwind CSS framework for easy styling.
 
-## 🚀 Project Structure
+![Lighthouse Score](public/SPT-performance.png)
 
-Inside of your Astro project, you'll see the following folders and files:
+## License
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project is open source and is released under the [GNU General Public License (GPL)](LICENSE). You are free to use, modify, and distribute this project in accordance with the terms of the GPL. Please see the [LICENSE](LICENSE) file for more details.
