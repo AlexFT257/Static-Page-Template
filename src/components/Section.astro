@@ -1,38 +1,50 @@
 ---
 interface Props {
-	title: string;
-	description: string;
-    disclaimer?:{
-        text: string;
-        href: string;
-        target?: string;
-    }
-	leftButton: {
-        text: string;
-        href: string;
-        target?: string;
-    }
-    rightButton: {
-        text: string;
-        href: string;
-        target?: string;
-    }
-    imageSrc?: string;
-    videoSrc?: string;
-    color: string;
+  title: string;
+  description: string;
+  headerColor: string;
+  disclaimer?: {
+    text: string;
+    underline: string;
+    href: string;
+    target?: string;
+  };
+  leftButton: {
+    text: string;
+    href: string;
+    target?: string;
+  };
+  rightButton: {
+    text: string;
+    href: string;
+    target?: string;
+  };
+  imageSrc?: string;
+  videoSrc?: string;
+  color: string;
 }
 
-const { title, description, disclaimer, leftButton, rightButton, imageSrc, videoSrc, color } = Astro.props;
-
+const {
+  title,
+  description,
+  headerColor,
+  disclaimer,
+  leftButton,
+  rightButton,
+  imageSrc,
+  videoSrc,
+  color,
+} = Astro.props;
 ---
+
 <section
   class="landing-section bg-black text-white h-screen text-center relative overflow-hidden"
   data-header-color={color}
 >
   <div class="z-30 relative h-full flex flex-col">
-    <header class="flex flex-col h-full">
-      <h2 class="text-white pt-40 text-5xl font-medium">{title}</h2>
-      <p class="text-white text-xl">{description}</p>
+    <header class:list={["flex flex-col h-full ", `text-${headerColor}`]}>
+      <h2 class="pt-40 text-5xl font-medium">{title}</h2>
+      <p class="text-xl">{description}</p>
     </header>
 
     <footer class="flex flex-col flex-grow justify-end pb-4">
@@ -40,49 +52,54 @@ const { title, description, disclaimer, leftButton, rightButton, imageSrc, video
         <a
           class="px-20 py-3 bg-gray-800/70 backdrop-blur-sm rounded hover:bg-gray-900/90 transition-colors duration-200"
           href={leftButton.href}
-          target={leftButton.target? leftButton.target : "_self"}
+          target={leftButton.target ? leftButton.target : "_self"}
           >{leftButton.text}
         </a>
         <a
           class="px-20 py-3 bg-gray-200/70 backdrop-blur-sm rounded text-black hover:bg-gray-200/90 transition-colors duration-200"
           href={rightButton.href}
-          target={rightButton.target? rightButton.target : "_self"}
+          target={rightButton.target ? rightButton.target : "_self"}
           >{rightButton.text}
         </a>
       </div>
 
-      {disclaimer && (
-        <p class="text-xs mt-8">
-          {disclaimer.text}{" "}
-          <a
-            class="underline underline-offset-2"
-            href={disclaimer.href}
-            target={disclaimer.target? disclaimer.target : "_self"}
-            >{disclaimer.text}
-          </a>
-        </p>
-      )}
-      
+      {
+        disclaimer && (
+          <p class="text-xs mt-8">
+            {disclaimer.text}{" "}
+            <a
+              class="underline underline-offset-2"
+              href={disclaimer.href}
+              target={disclaimer.target ? disclaimer.target : "_self"}
+            >
+              {disclaimer.underline}
+            </a>
+          </p>
+        )
+      }
     </footer>
   </div>
 
   <div class="absolute top-0 bottom-0 h-full w-full z-10">
-    {imageSrc && (
-      <img
-        class="object-cover object-center h-full w-full"
-        src={imageSrc}
-        alt="Landing section background"
-      />
-    )}
-    {videoSrc && (
-      <video
-        class="object-cover object-center h-full w-full"
-        autoplay
-        loop
-        muted
-        src={videoSrc}
-      ></video>
-    )}
-
+    {
+      imageSrc && (
+        <img
+          class="object-cover object-center h-full w-full"
+          src={imageSrc}
+          alt="Landing section background"
+        />
+      )
+    }
+    {
+      videoSrc && (
+        <video
+          class="object-cover object-center h-full w-full"
+          autoplay
+          loop
+          muted
+          src={videoSrc}
+        />
+      )
+    }
   </div>
 </section>

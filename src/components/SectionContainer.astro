@@ -1,0 +1,32 @@
+---
+import Section from "./Section.astro";
+---
+
+<main
+  class="relative w-full h-screen overflow-auto snap-y snap-mandatory scroll-smooth"
+>
+  <div class="snap-center">
+    <Section
+      title="Last Product"
+      description="A short description of the last product"
+      headerColor="white"
+      color="white"
+      leftButton={{ text: "Order Now", href: "/order" }}
+      rightButton={{ text: "Learn More", href: "/learn" }}
+      disclaimer={{ text: "A short disclaimer", underline:"check about", href: "/about"  }}
+      videoSrc="/video.mp4"
+    />
+  </div>
+  <div class="snap-center">
+    <Section
+      title="Housing"
+      description="A short description of the housing project"
+      headerColor="black"
+      color="black"
+      leftButton={{ text: "Order Now", href: "/order" }}
+      rightButton={{ text: "Learn More", href: "/learn" }}
+      disclaimer={{ text: "This is a template", underline:"check about", href: "/about" }}
+      imageSrc="/solarpanels.jpg"
+    />
+  </div>
+</main>
